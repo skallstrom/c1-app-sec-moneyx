@@ -68,7 +68,7 @@ node('jenkins-jenkins-slave') {
                          kubeconfigId: "kubeconfig",
                          enableConfigSubstitution: true,
                          dockerCredentials: [
-                           [credentialsId: "registry-auth", url: "${K8S_REGISTRY}"],
+                           [credentialsId: "registry-auth", url: "https://${K8S_REGISTRY}"],
                          ])
       }
     }
