@@ -9,7 +9,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 5000
+  - port: 8080
     name: c1-app-sec-moneyx
     targetPort: 8080
     nodePort: 30100
