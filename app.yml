@@ -3,25 +3,25 @@ kind: Service
 metadata:
   annotations:
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
-  name: c1-app-sec-moneyx
+  name: demoapp
   labels:
-    app: c1-app-sec-moneyx
+    app: demoapp
 spec:
   type: NodePort
   ports:
   - port: 8080
-    name: c1-app-sec-moneyx
+    name: demoapp
     targetPort: 8080
     nodePort: 30100
   selector:
-    app: c1-app-sec-moneyx
+    app: demoapp
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: c1-app-sec-moneyx
-  name: c1-app-sec-moneyx
+    app: demoapp
+  name: demoapp
 spec:
   replicas: 1
   strategy:
@@ -32,10 +32,10 @@ spec:
   template:
     metadata:
       labels:
-        app: c1-app-sec-moneyx
+        app: demoapp
     spec:
       containers:
-      - name: c1-app-sec-moneyx
+      - name: demoapp
         image: $K8S_REGISTRY/c1-app-sec-moneyx:latest
         imagePullPolicy: Always
         env:
