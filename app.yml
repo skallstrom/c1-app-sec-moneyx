@@ -16,7 +16,7 @@ spec:
   selector:
     app: c1-app-sec-moneyx
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -24,6 +24,9 @@ metadata:
   name: c1-app-sec-moneyx
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: c1-app-sec-moneyx
   strategy:
     type: RollingUpdate
     rollingUpdate:
