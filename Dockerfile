@@ -2,7 +2,7 @@ FROM frekele/gradle:2.4-jdk8
 
 RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main" > /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --force-yes --no-install-recommends git && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /app
 WORKDIR /app
