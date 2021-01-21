@@ -33,8 +33,8 @@ node('jenkins-jenkins-slave') {
             malware: 0,
             vulnerabilities: [
               defcon1: 10,
-              critical: 105,
-              high: 100,
+              critical: 100,
+              high: 105,
               medium: 200,
               low: 100
             ],
