@@ -1,5 +1,5 @@
 #FROM frekele/gradle:2.4-jdk8
-FROM frekele/gradle:latest
+FROM frekele/gradle:2.4-jdk8u131
 
 RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main" > /etc/apt/sources.list
 
